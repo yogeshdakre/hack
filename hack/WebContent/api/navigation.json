@@ -1,0 +1,51 @@
+{
+    "main": [
+  
+        
+       
+          
+				              {
+				                    "label": "ESurvey",
+				                    "title": "ESurvey",
+				                    "closeable":false,
+				                    "id": "surveyAdmin",
+				                    "partial": "views/admin.html"
+				                },
+				               
+				                {
+				                    "label": "Survey Questions",
+				                    "title": "Survey Questions",
+				                    "closeable":false,
+				                    "id": "surveyQuestions",
+				                    "partial": "views/questions.html"
+				                }
+				                ,
+				               
+				                
+				                {
+				                    "label": "Graphical DashBoard",
+				                    "title": "Graphical DashBoard",
+				                    "closeable":false,
+				                    "id": "graphdb",
+				                    "partial": "views/graphDB.html"
+				                } ,
+				                
+				                {
+				                    "label": "Location DashBoard",
+				                    "title": "Location DashBoard",
+				                    "closeable":false,
+				                    "id": "googledb",
+				                    "partial": "views/googleDB.html"
+				                },
+				                
+				                 {
+				                    "label": "Hackthon Fun",
+				                    "title": "Hackthon Fun",
+				                    "closeable":false,
+				                    "id": "team",
+				                    "partial": "views/team.html"
+				                }
+          
+        
+    ]
+}

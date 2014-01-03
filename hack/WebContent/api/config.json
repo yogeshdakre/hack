@@ -1,0 +1,21 @@
+{
+    "windowTitle": "Sungard ESurvey",
+    "appId": "sungard",
+    "appTitle": "Sungard ESurvey",
+    "locale": "en",
+    "endpoints": {
+        "navigation": "api/navigation.json",
+        "i18n": "api/i18n"
+    },
+    "widgets": {
+            "sgTabsBar": {
+                "updateTabTitle": true
+            },
+            "sgDatePicker":{
+                    "cutOffYear": 45
+            }
+
+    },
+    "SURVEYURL": "https://yogi-firebase.firebaseio.com"
+
+}

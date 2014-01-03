@@ -1,0 +1,46 @@
+<div ng-controller="adminController">
+
+				<ng-form name="myForm">
+				<table class="table table-hover" style="margin-top: 0.3em">
+					<thead>
+						<tr>
+							<th>Survey Questions</th>
+						</tr> 
+					</thead>
+					<tbody>
+						<tr  ng-hide="questions[0]">
+							<td  style="text-align: center">No Questions found.</td>
+						</tr>
+						<tr>
+							<td>
+								<table class="table table-hover" style="margin-top: 0.3em">
+									<tr ng-show="questions[0]" ng-repeat="question in questions | filter:searchValue" >
+									<td >
+									      <table>
+											<tr>
+												<td>{{$index+1}}</td>
+												<td colspan="5"><b>{{question.questiontxt}}</b></td>
+		
+		
+											</tr>
+											<tr >
+											
+											<td>&nbsp;</td>	
+							<td><input type="radio" ng-model="consent" value="1">Strongly Disagree
+                            <input type="radio" ng-model="consent" value="2">Disagree
+                            <input type="radio" ng-model="consent" value="3">Neutral
+                            <input type="radio" ng-model="consent" value="4">Strongly Agree
+                            <input type="radio" ng-model="consent" value="5">Agree
+							&nbsp;&nbsp;&nbsp;&nbsp;<button ng-click="recordAnswer(question,consent);" >Submit Answer</button></td>												
+											</tr>
+											</table>
+									</td>
+									</tr>
+								</table>
+							</td>
+						</tr>
+					</tbody>
+				</table>
+			</ng-form>
+			</div>
+		

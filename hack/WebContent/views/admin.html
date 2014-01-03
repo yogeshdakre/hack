@@ -1,0 +1,74 @@
+<div ng-controller="adminController">
+    <div class="container">
+        <div class="row">
+             <div class="span3">
+                <form>
+                    <fieldset>
+                        <legend>Search</legend>
+                        <div class="input-prepend input-append">
+                            <div class="btn-group" ng-class="{open: !searchCollapse}">
+                                <button class="btn dropdown-toggle" ng-click="searchCollapse=!searchCollapse"><i class="icon-{{searchIcon}}"></i> <span class="caret"></span></button>
+
+                            <input class="span2" type="text" ng-model="searchValue" />
+                           
+                        </div>
+                        
+                    </fieldset>
+                </form>
+                 <div>{{(questions|filter:searchValue).length}} Questions found</div>
+                <form>
+                    <fieldset>
+                        <legend>Add Question</legend>
+                        <div class="input-prepend">
+                            <span class="add-on"><i class="icon-question-sign"></i></span>
+                            <input class="span2" type="text" placeholder="Question" ng-model="questiontxt" null-if-empty />
+                        </div>
+
+                        <button class="btn" type="submit" ng-click="addQuestion();questiontxt='';searchValue='';">Add</button>
+                    </fieldset>
+                </form>
+                <form>
+                    <fieldset>
+                        <legend>Refresh</legend>
+                        <button class="btn" type="submit" ng-click="refresh()"><i class="icon-refresh"></i> Refresh</button>
+                    </fieldset>
+                </form>
+            </div>
+            <div class="span9">
+                <div ng-show="errors[0]" class="alert alert-error">
+                    <button type="button" class="close" ng-click="clearErrors()">&times;</button>
+                    <h4>Errors! (HTTP {{httpStatus}})</h4>
+                    <br/>
+                    <ul class="unstyled">
+                        <li ng-repeat="error in errors">{{error.path}} - {{error.message}}</li>
+                    </ul>
+                </div>
+                <table class="table table-hover" style="margin-top: 0.3em">
+                    <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>Question</th>
+                        <th>&nbsp;</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                        <tr ng-hide="questions[0]">
+                            <td colspan="3" style="text-align: center">No Questions found.</td>
+                        </tr>
+                        <tr ng-show="questions[0]" ng-repeat="question in questions | filter:searchValue">
+                             <td>{{$index+1}}</td>
+                             <td><b>{{question.questiontxt}}</b></td>
+                            
+                            <td><a ng-click="questions.remove(question);"><i class="icon-trash"></i></a></td>
+                            
+                        </tr>
+                    </tbody>
+
+                </table>
+            </div>
+            
+  
+        </div>
+    </div>
+</div>
+
